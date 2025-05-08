@@ -1,0 +1,210 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;  
+}
+
+#ad-container {
+    width: 300px;
+    height: 600px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;  
+}
+
+.screen.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+    text-decoration: none;  
+    display: inline-block;  
+    width: 80%;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn:active, .btn.selected {
+    background-color: #004085;
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+#no-pic-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #007bff;
+    text-decoration: none;
+}
+#no-pic-link:hover {
+    text-decoration: underline;
+}
+
+/* Camera Screen */
+.camera-feed-container {
+    width: 240px;  
+    height: 240px;  
+    background-color: #000;
+    border: 2px solid #eee;
+    position: relative;
+    overflow: hidden;  
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#camera-feed {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+
+#camera-status {
+    font-size: 0.8em;
+    color: #ff0000;
+    margin-top: 5px;
+}
+
+.scan-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 255, 255, 0.7);  
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.9);
+    display: none;  
+}
+
+/* Mood Selection Screen */
+#mood-buttons-container {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 10px;  
+    margin-bottom: 20px;
+}
+
+.mood-option-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    width: auto;  
+    padding: 10px 15px;
+}
+
+.mood-option-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.mood-option-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+ 
+#movie-recommendation img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+#movie-recommendation h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#mood-heading {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+#mood-heading #detected-mood-text {
+    font-weight: bold;
+    color: #007bff;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Movie Recommender</title>
+    <link rel="stylesheet" href="mood.css">
+    
+</head>
+<body>
+    <div id="ad-container">
+        <div id="initial-screen" class="screen active">
+           <h1>Movie Recommender based on Mood</h1>
+            <h2>Feeling a Vibe?</h2>
+            <p>Let us scan your face to find the perfect movie for your mood!</p>
+            <button id="allow-camera-btn" class="btn">Use Camera</button>
+            <a href="#" id="no-pic-link">No Pic? No problem! Choose your mood</a>
+        </div>
+
+        <div id="camera-screen" class="screen">
+            <div class="camera-feed-container">
+                <video id="camera-feed" autoplay playsinline muted></video>
+                <div id="scan-animation" class="scan-bar"></div>
+                <p id="camera-status"></p>
+            </div>
+            <button id="check-mood-btn" class="btn">Check My Mood</button>
+            <button id="cancel-camera-btn" class="btn btn-secondary">Cancel</button>
+        </div>
+
+        <div id="mood-selection-screen" class="screen">
+            <h2>How are you feeling?</h2>
+            <div id="mood-buttons-container">
+                <button class="mood-option-btn btn" data-mood="Happy">😊 Happy</button>
+                <button class="mood-option-btn btn" data-mood="Excited">🤩 Excited</button>
+                <button class="mood-option-btn btn" data-mood="Neutral">😐 Neutral</button>
+                <button class="mood-option-btn btn" data-mood="Angry">😠 Angry</button>
+                <button class="mood-option-btn btn" data-mood="Sad">😢 Sad</button>
+            </div>
+            <button id="submit-mood-btn" class="btn" disabled>This is my mood</button>
+            <button id="back-to-start-btn" class="btn btn-secondary">Back</button>
+        </div>
+
+        <div id="recommendation-screen" class="screen">
+            <h2 id="mood-heading">We detected you're <span id="detected-mood-text"></span>!</h2>
+            <p>Here's a movie for you:</p>
+            <div id="movie-recommendation">
+                <img id="movie-thumbnail" src="" alt="Movie Thumbnail">
+                <h3 id="movie-name"></h3>
+                <a id="watch-now-btn" href="" target="_blank" class="btn">Watch Now</a>
+            </div>
+            <button id="scan-again-btn" class="btn">Scan Again / Choose Mood</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="mood.js"></script>
+</body>
+</html>
